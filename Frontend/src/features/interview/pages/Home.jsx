@@ -83,14 +83,14 @@ function getReportTitle(report) {
 
 function FeatureCard({ icon, title, description }) {
   return (
-    <div className="group rounded-2xl border border-slate-200 bg-white p-5 transition duration-300 hover:-translate-y-1 hover:border-indigo-200 hover:shadow-lg hover:shadow-indigo-100/50">
-      <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-50 text-2xl transition group-hover:bg-indigo-100">
+    <div className="group rounded-2xl border border-slate-500 bg-gray-800 p-5 transition duration-300 hover:-translate-y-1 hover:border-indigo-200 hover:shadow-lg hover:shadow-indigo-100/50">
+      <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gray-300 text-2xl transition group-hover:bg-indigo-100">
         {icon}
       </div>
 
-      <h3 className="font-bold text-slate-900">{title}</h3>
+      <h3 className="font-bold text-lg text-slate-300">{title}</h3>
 
-      <p className="mt-2 text-sm leading-6 text-slate-500">{description}</p>
+      <p className="mt-2 text-md leading-6 text-slate-400">{description}</p>
     </div>
   );
 }
@@ -266,15 +266,15 @@ function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-[#f7f8fc] text-slate-900">
+    <div className="min-h-screen bg-gray-950 text-gray-500">
       <Navbar user={user} onLogout={handleLogoutClick} />
 
       <main className="relative min-h-screen overflow-hidden">
         {/* Decorative background */}
         <div className="pointer-events-none fixed inset-0 overflow-hidden">
-          <div className="absolute -top-40 left-1/4 h-96 w-96 rounded-full bg-indigo-200/30 blur-3xl" />
-          <div className="absolute right-0 top-96 h-80 w-80 rounded-full bg-violet-200/25 blur-3xl" />
-          <div className="absolute bottom-0 left-0 h-80 w-80 rounded-full bg-blue-100/30 blur-3xl" />
+          <div className="absolute -top-40 left-1/4 h-96 w-96 rounded-full blur-3xl" />
+          <div className="absolute right-0 top-96 h-80 w-80 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 h-80 w-80 rounded-full blur-3xl" />
         </div>
 
         <div className="relative mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
@@ -284,19 +284,19 @@ function Home() {
             className="mb-14 grid scroll-mt-28 items-center gap-10 lg:grid-cols-[1.3fr_0.7fr]"
           >
             <div>
-              <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-indigo-100 bg-white px-4 py-2 text-xs font-bold uppercase tracking-wider text-indigo-700 shadow-sm">
+              <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-indigo-100 bg-gray-800 px-4 py-2 text-xs font-bold uppercase tracking-wider text-gray-100 shadow-sm">
                 <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-500" />
                 AI-powered career preparation
               </div>
 
-              <h1 className="max-w-3xl text-4xl font-black leading-tight tracking-tight sm:text-5xl lg:text-6xl">
+              <h1 className="max-w-3xl text-4xl font-black text-gray-200 leading-tight tracking-tight sm:text-5xl lg:text-6xl">
                 Prepare for your next interview
-                <span className="mt-1 block bg-linear-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent">
+                <span className="mt-1 block bg-blue-700 bg-clip-text text-transparent">
                   with confidence.
                 </span>
               </h1>
 
-              <p className="mt-6 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
+              <p className="mt-6 max-w-2xl text-base leading-8 text-slate-400 sm:text-lg">
                 Turn your resume and target job description into a personalized
                 interview strategy with AI-powered insights, relevant questions,
                 and an actionable preparation roadmap.
@@ -306,7 +306,7 @@ function Home() {
                 <button
                   type="button"
                   onClick={scrollToGenerator}
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-indigo-600 px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-indigo-200 transition hover:-translate-y-0.5 hover:bg-indigo-700"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-gray-800 px-6 py-3.5 text-lg font-bold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-gray-900"
                 >
                   Generate my report
                   <span aria-hidden="true">→</span>
@@ -314,20 +314,20 @@ function Home() {
 
                 <a
                   href="#reports"
-                  className="inline-flex items-center justify-center rounded-xl border border-slate-200 bg-white px-6 py-3.5 text-sm font-bold text-slate-700 transition hover:border-indigo-200 hover:bg-indigo-50"
+                  className="inline-flex items-center justify-center rounded-xl border border-slate-500 bg-gray-800 px-6 py-3.5 text-medium font-bold text-slate-200 transition hover:border-gray-600 hover:bg-gray-900"
                 >
                   View previous reports
                 </a>
               </div>
 
-              <div className="mt-8 flex flex-wrap gap-3 text-sm text-slate-600">
+              <div className="mt-8 flex flex-wrap gap-3 text-sm text-slate-200">
                 {["Resume analysis", "Match score", "Interview roadmap"].map(
                   (item) => (
                     <span
                       key={item}
-                      className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-2"
+                      className="inline-flex items-center gap-2 rounded-full border border-slate-500 bg-gray-800 px-3 py-2"
                     >
-                      <span className="font-bold text-emerald-600">✓</span>
+                      <span className="font-bold text-emerald-500">✓</span>
                       {item}
                     </span>
                   ),
@@ -337,18 +337,18 @@ function Home() {
 
             {/* Hero illustration card */}
             <div className="hidden lg:block">
-              <div className="relative mx-auto max-w-md rounded-3xl border border-white bg-white p-7 shadow-2xl shadow-indigo-100/70">
+              <div className="relative mx-auto max-w-md rounded-3xl border border-slate-500 bg-gray-900 p-7 shadow-2xl">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-xs font-bold uppercase tracking-widest text-slate-400">
+                    <p className="text-xs font-bold uppercase tracking-widest text-slate-300">
                       Your preparation
                     </p>
-                    <h2 className="mt-2 text-2xl font-extrabold">
+                    <h2 className="mt-2 text-2xl font-extrabold text-gray-300">
                       One step ahead
                     </h2>
                   </div>
 
-                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-indigo-50 text-3xl">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gray-300 text-3xl">
                     ✦
                   </div>
                 </div>
@@ -357,15 +357,15 @@ function Home() {
                   {STEPS.map((step) => (
                     <div
                       key={step.number}
-                      className="flex items-center gap-4 rounded-2xl bg-slate-50 p-4"
+                      className="flex items-center gap-4 rounded-2xl bg-slate-800 p-4"
                     >
-                      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-indigo-600 text-sm font-bold text-white">
+                      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-indigo-800 text-sm font-bold text-white">
                         {step.number}
                       </span>
 
                       <div>
-                        <p className="font-bold text-slate-900">{step.title}</p>
-                        <p className="mt-1 text-sm text-slate-500">
+                        <p className="font-bold text-slate-300">{step.title}</p>
+                        <p className="mt-1 text-sm text-slate-300">
                           {step.description}
                         </p>
                       </div>
@@ -373,7 +373,7 @@ function Home() {
                   ))}
                 </div>
 
-                <div className="mt-5 rounded-2xl bg-linear-to-r from-indigo-600 to-violet-600 p-5 text-white">
+                <div className="mt-5 rounded-2xl bg-gray-700 p-5 text-white">
                   <p className="font-bold">
                     Your next opportunity starts here.
                   </p>
@@ -390,18 +390,18 @@ function Home() {
             id="generator"
             className="grid scroll-mt-28 items-start gap-8 lg:grid-cols-[minmax(0,1fr)_310px]"
           >
-            <div className="overflow-hidden rounded-3xl border border-slate-200/80 bg-white shadow-xl shadow-slate-200/40">
-              <div className="border-b border-slate-100 bg-linear-to-r from-white to-indigo-50/70 px-6 py-7 sm:px-9">
+            <div className="overflow-hidden rounded-3xl border border-slate-500/80 bg-gray-900 shadow-xl ">
+              <div className="border-b border-slate-500 px-6 py-7 sm:px-9">
                 <div className="flex items-start gap-4">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-indigo-600 text-2xl text-white shadow-lg shadow-indigo-200">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-indigo-600 text-2xl text-white shadow-lg">
                     ✦
                   </div>
 
                   <div>
-                    <h2 className="text-xl font-extrabold sm:text-2xl">
+                    <h2 className="text-xl text-slate-300 font-extrabold sm:text-2xl">
                       Create your interview report
                     </h2>
-                    <p className="mt-2 text-sm leading-6 text-slate-500">
+                    <p className="mt-2 text-sm leading-6 text-slate-300">
                       Provide the details below to generate your personalized
                       interview preparation report.
                     </p>
@@ -443,13 +443,13 @@ function Home() {
                   <div className="mb-3 flex items-center justify-between gap-3">
                     <label
                       htmlFor="resume"
-                      className="text-sm font-bold text-slate-800"
+                      className="text-lg font-bold text-slate-300"
                     >
                       Upload your resume
                       <span className="ml-1 text-rose-500">*</span>
                     </label>
 
-                    <span className="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-500">
+                    <span className="rounded-full bg-slate-800 px-2.5 py-1 text-lg font-semibold text-slate-300">
                       PDF · Max 5 MB
                     </span>
                   </div>
@@ -471,10 +471,10 @@ function Home() {
                     onClick={() => fileInputRef.current?.click()}
                     className={`cursor-pointer rounded-2xl border-2 border-dashed p-7 text-center transition sm:p-9 ${
                       dragging
-                        ? "border-indigo-500 bg-indigo-50"
+                        ? "border-indigo-500 bg-gray-800"
                         : resume
-                          ? "border-emerald-300 bg-emerald-50/50"
-                          : "border-slate-300 bg-slate-50/70 hover:border-indigo-400 hover:bg-indigo-50/50"
+                          ? "border-emerald-400 bg-gray-800"
+                          : "border-slate-300 bg-gray-800 hover:border-indigo-400 hover:bg-gray-900"
                     }`}
                   >
                     <input
@@ -514,11 +514,11 @@ function Home() {
                       </>
                     ) : (
                       <>
-                        <p className="mt-4 font-bold text-slate-800">
+                        <p className="mt-4 font-bold text-slate-400">
                           Drop your resume here or{" "}
                           <span className="text-indigo-600">browse files</span>
                         </p>
-                        <p className="mt-2 text-sm text-slate-500">
+                        <p className="mt-2 text-sm text-slate-300">
                           Upload a PDF so the AI can analyze your experience and
                           skills.
                         </p>
@@ -532,12 +532,12 @@ function Home() {
                   <div className="mb-3 flex items-center justify-between gap-3">
                     <label
                       htmlFor="jobDescription"
-                      className="text-sm font-bold text-slate-800"
+                      className="text-lg font-bold text-slate-300"
                     >
                       Job description
                       <span className="ml-1 text-rose-500">*</span>
                     </label>
-                    <span className="text-xs text-slate-400">Required</span>
+                    <span className="text-md text-slate-300">Required</span>
                   </div>
 
                   <textarea
@@ -548,10 +548,10 @@ function Home() {
                     rows={7}
                     required
                     maxLength={20000}
-                    className="w-full resize-y rounded-2xl border border-slate-200 bg-white px-4 py-4 text-sm leading-7 text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-indigo-400 focus:ring-4 focus:ring-indigo-100"
+                    className="w-full resize-y rounded-2xl border border-slate-500 bg-gray-800 px-4 py-4 text-lg leading-7 text-slate-300 outline-none transition placeholder:text-slate-400 focus:border-indigo-400 focus:ring-4"
                   />
 
-                  <div className="mt-2 text-right text-xs text-slate-400">
+                  <div className="mt-2 text-right text-md text-slate-400">
                     {jobDescription.length.toLocaleString()} / 20,000 characters
                   </div>
                 </div>
@@ -561,12 +561,12 @@ function Home() {
                   <div className="mb-3 flex items-center justify-between gap-3">
                     <label
                       htmlFor="selfDescription"
-                      className="text-sm font-bold text-slate-800"
+                      className="text-lg font-bold text-slate-300"
                     >
                       Introduce yourself
                       <span className="ml-1 text-rose-500">*</span>
                     </label>
-                    <span className="text-xs text-slate-400">Required</span>
+                    <span className="text-md text-slate-400">Required</span>
                   </div>
 
                   <textarea
@@ -577,10 +577,10 @@ function Home() {
                     rows={5}
                     required
                     maxLength={10000}
-                    className="w-full resize-y rounded-2xl border border-slate-200 bg-white px-4 py-4 text-sm leading-7 text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-indigo-400 focus:ring-4 focus:ring-indigo-100"
+                    className="w-full resize-y rounded-2xl border border-slate-500 bg-gray-800 px-4 py-4 text-md leading-7 text-slate-300 outline-none transition placeholder:text-slate-400 focus:border-indigo-400 focus:ring-4 focus:ring-indigo-100"
                   />
 
-                  <div className="mt-2 text-right text-xs text-slate-400">
+                  <div className="mt-2 text-right text-md text-slate-400">
                     {selfDescription.length.toLocaleString()} / 10,000
                     characters
                   </div>
@@ -591,7 +591,7 @@ function Home() {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="flex w-full items-center justify-center gap-3 rounded-xl bg-linear-to-r from-indigo-600 to-violet-600 px-6 py-4 font-bold text-white shadow-lg shadow-indigo-200 transition hover:-translate-y-0.5 hover:shadow-xl hover:shadow-indigo-200/70 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0"
+                    className="flex w-full items-center justify-center gap-3 rounded-xl px-6 py-4 font-bold text-white shadow-lg bg-green-800 hover:-translate-y-0.5 hover:shadow-xl disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0"
                   >
                     {loading ? (
                       <>
@@ -606,7 +606,7 @@ function Home() {
                     )}
                   </button>
 
-                  <div className="mt-4 flex items-start justify-center gap-2 text-center text-xs leading-5 text-slate-500">
+                  <div className="mt-4 flex items-start justify-center gap-2 text-center text-sm leading-5 text-slate-400">
                     <span>🔒</span>
                     <span>
                       Your report is generated from the information you provide.
@@ -618,7 +618,7 @@ function Home() {
                     type="button"
                     onClick={clearForm}
                     disabled={loading}
-                    className="mt-4 w-full rounded-xl px-4 py-2.5 text-sm font-semibold text-slate-500 transition hover:bg-slate-100 hover:text-slate-800 disabled:opacity-50"
+                    className="mt-4 w-full rounded-xl px-4 py-2.5 text-sm font-semibold text-slate-500 transition hover:bg-slate-800 hover:text-slate-300 disabled:opacity-50"
                   >
                     Clear form
                   </button>
@@ -628,14 +628,14 @@ function Home() {
 
             {/* Feature sidebar */}
             <aside id="features" className="scroll-mt-28 space-y-5">
-              <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+              <div className="rounded-3xl border border-slate-500 bg-gray-800 p-6 shadow-sm">
                 <div className="mb-5 flex items-center gap-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-50 text-xl">
                     ✨
                   </div>
                   <div>
-                    <h2 className="font-extrabold">What you'll receive</h2>
-                    <p className="mt-1 text-xs text-slate-500">
+                    <h2 className="font-extrabold text-slate-300 text-lg">What you'll receive</h2>
+                    <p className="mt-1 text-sm text-slate-400">
                       A personalized preparation guide
                     </p>
                   </div>
@@ -649,10 +649,10 @@ function Home() {
                       </div>
 
                       <div>
-                        <h3 className="text-sm font-bold text-slate-800">
+                        <h3 className="text-md font-bold text-slate-300">
                           {feature.title}
                         </h3>
-                        <p className="mt-1 text-xs leading-5 text-slate-500">
+                        <p className="mt-1 text-sm leading-5 text-slate-400">
                           {feature.description}
                         </p>
                       </div>
@@ -661,7 +661,7 @@ function Home() {
                 </div>
               </div>
 
-              <div className="overflow-hidden rounded-3xl bg-linear-to-br from-indigo-600 to-violet-700 p-6 text-white shadow-xl shadow-indigo-200/50">
+              <div className="overflow-hidden rounded-3xl bg-gray-900 p-6 text-gray-300 shadow-xl ">
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-white/15 text-2xl">
                   🚀
                 </div>
@@ -670,7 +670,7 @@ function Home() {
                   Small steps. Better preparation.
                 </h2>
 
-                <p className="mt-3 text-sm leading-6 text-indigo-100">
+                <p className="mt-3 text-sm leading-6 text-gray-400">
                   Understand your skill gaps, practice relevant questions, and
                   work through your preparation plan one day at a time.
                 </p>
@@ -678,17 +678,17 @@ function Home() {
                 <button
                   type="button"
                   onClick={scrollToGenerator}
-                  className="mt-5 rounded-xl bg-white px-4 py-3 text-sm font-bold text-indigo-700 transition hover:bg-indigo-50"
+                  className="mt-5 rounded-xl bg-gray-700 px-4 py-3 text-sm font-bold text-gray-300 transition hover:bg-gray-800"
                 >
                   Start preparing →
                 </button>
               </div>
 
-              <div className="rounded-2xl border border-indigo-100 bg-indigo-50/70 p-5">
-                <p className="text-sm font-bold text-indigo-900">
+              <div className="rounded-2xl border border-gray-500 bg-gray-800 p-5">
+                <p className="text-lg font-bold text-indigo-500">
                   💡 Preparation tip
                 </p>
-                <p className="mt-2 text-sm leading-6 text-indigo-800/80">
+                <p className="mt-2 text-md leading-6 text-indigo-700">
                   Use specific examples from your projects and experience.
                   Practice explaining not just what you did, but why you chose
                   your approach.
@@ -700,13 +700,13 @@ function Home() {
           {/* Feature cards */}
           <section className="mt-16">
             <div className="mb-7 max-w-2xl">
-              <p className="text-xs font-bold uppercase tracking-widest text-indigo-600">
+              <p className="text-xl font-bold uppercase tracking-widest text-indigo-600">
                 Your preparation toolkit
               </p>
-              <h2 className="mt-3 text-2xl font-black tracking-tight sm:text-3xl">
+              <h2 className="mt-3 text-2xl text-slate-300 font-black tracking-tight sm:text-3xl">
                 Everything you need to prepare smarter
               </h2>
-              <p className="mt-3 leading-7 text-slate-500">
+              <p className="mt-3 leading-7 text-slate-400">
                 Turn your application into a practical, structured interview
                 preparation experience.
               </p>
@@ -723,13 +723,13 @@ function Home() {
           <section id="reports" className="mt-16 scroll-mt-28">
             <div className="mb-7 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
               <div>
-                <p className="text-xs font-bold uppercase tracking-widest text-indigo-600">
+                <p className="text-xl font-bold uppercase tracking-widest text-indigo-600">
                   Your workspace
                 </p>
-                <h2 className="mt-2 text-2xl font-black tracking-tight sm:text-3xl">
+                <h2 className="mt-2 text-2xl text-gray-400 font-black tracking-tight sm:text-3xl">
                   Previous reports
                 </h2>
-                <p className="mt-2 text-sm leading-6 text-slate-500">
+                <p className="mt-2 text-md leading-6 text-slate-400">
                   Revisit your saved interview preparation reports.
                 </p>
               </div>
@@ -737,7 +737,7 @@ function Home() {
               <button
                 type="button"
                 onClick={scrollToGenerator}
-                className="inline-flex items-center justify-center gap-2 self-start rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-700 transition hover:border-indigo-200 hover:bg-indigo-50 sm:self-auto"
+                className="inline-flex items-center justify-center gap-2 self-start rounded-xl border border-slate-500 bg-gray-700 px-4 py-3 text-md font-bold text-slate-300 transition hover:border-indigo-200 hover:bg-gray-800 sm:self-auto"
               >
                 <span aria-hidden="true">＋</span>
                 New report
@@ -745,7 +745,7 @@ function Home() {
             </div>
 
             {reportsLoading ? (
-              <div className="rounded-3xl border border-slate-200 bg-white p-10 text-center">
+              <div className="rounded-3xl border border-slate-500 bg-gray-800 p-10 text-center">
                 <div className="mx-auto h-8 w-8 animate-spin rounded-full border-2 border-indigo-200 border-t-indigo-600" />
                 <p className="mt-4 text-sm text-slate-500">
                   Loading your reports...
@@ -785,15 +785,15 @@ function Home() {
                   return (
                     <article
                       key={report._id}
-                      className="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-indigo-200 hover:shadow-xl hover:shadow-indigo-100/50"
+                      className="group rounded-2xl border border-slate-500 bg-gray-900 p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-gray-900 hover:shadow-xl hover:shadow-indigo-100/50"
                     >
                       <div className="flex items-start justify-between gap-3">
-                        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-indigo-50 text-2xl">
+                        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gray-700 text-2xl">
                           📋
                         </div>
 
                         {hasScore && (
-                          <div className="rounded-xl bg-slate-50 px-3 py-2 text-right">
+                          <div className="rounded-xl bg-slate-700 px-3 py-2 text-right">
                             <p
                               className={`text-xl font-black ${getScoreColor(score)}`}
                             >
@@ -806,23 +806,23 @@ function Home() {
                         )}
                       </div>
 
-                      <h3 className="mt-5 line-clamp-2 font-extrabold leading-6 text-slate-900">
+                      <h3 className="mt-5 line-clamp-2 font-extrabold leading-6 text-slate-300">
                         {getReportTitle(report)}
                       </h3>
 
-                      <p className="mt-2 text-xs text-slate-500">
+                      <p className="mt-2 text-md text-slate-400">
                         Created {formatDate(report.createdAt)}
                       </p>
 
-                      <div className="mt-5 flex items-center justify-between border-t border-slate-100 pt-4">
-                        <span className="text-xs font-medium text-slate-500">
+                      <div className="mt-5 flex items-center justify-between border-t border-slate-500 pt-4">
+                        <span className="text-md font-medium text-slate-500">
                           AI interview report
                         </span>
 
                         <button
                           type="button"
                           onClick={() => openReport(report)}
-                          className="inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-bold text-indigo-600 transition hover:bg-indigo-50"
+                          className="inline-flex items-center gap-2 rounded-lg px-3 py-2 text-md font-bold text-indigo-600 transition hover:bg-gray-800"
                         >
                           View report
                           <span
@@ -844,15 +844,15 @@ function Home() {
           <footer className="mt-16 border-t border-slate-200 py-8">
             <div className="flex flex-col items-center justify-between gap-4 text-center sm:flex-row sm:text-left">
               <div>
-                <p className="font-extrabold">
-                  Interview<span className="text-indigo-600">AI</span>
+                <p className="font-extrabold text-xl">
+                  Interview<span className="text-indigo-600 text-xl">AI</span>
                 </p>
-                <p className="mt-1 text-xs text-slate-500">
+                <p className="mt-1 text-md text-slate-500">
                   Your personal interview preparation assistant.
                 </p>
               </div>
 
-              <p className="text-xs text-slate-400">
+              <p className="text-md text-slate-400">
                 © {new Date().getFullYear()} InterviewAI. Prepare with purpose.
               </p>
             </div>

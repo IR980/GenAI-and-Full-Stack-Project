@@ -97,15 +97,15 @@ export default function Navbar({ user, onLogout }) {
     <header
       className={`sticky top-0 z-50 w-full transition-all duration-300 ${
         scrolled
-          ? "border-b border-slate-200/70 bg-white/90 shadow-lg shadow-slate-900/5 backdrop-blur-xl"
-          : "border-b border-slate-100 bg-white"
+          ? "border-b border-slate-200/70 bg-black shadow-lg shadow-slate-900/5 backdrop-blur-xl"
+          : "border-b border-slate-100 bg-black"
       }`}
     >
       <nav
         aria-label="Main navigation"
         className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
       >
-        <div className="flex h-19 items-center justify-between gap-4">
+        <div className="flex h-24 items-center justify-around gap-7">
           {/* Brand */}
           <Link
             to="/"
@@ -114,33 +114,33 @@ export default function Navbar({ user, onLogout }) {
               setProfileOpen(false);
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
-            className="group flex shrink-0 items-center gap-3"
+            className="group flex shrink-0 items-center gap-9"
             aria-label="AI Interview home"
           >
-            <span className="grid h-11 w-11 place-items-center rounded-2xl bg-linear-to-br from-indigo-600 via-indigo-600 to-violet-600 text-xl font-black text-white shadow-lg shadow-indigo-500/25 transition duration-300 group-hover:-rotate-6 group-hover:scale-105">
+            <span className="grid h-14 w-14 place-items-center rounded-2xl bg-linear-to-br from-indigo-600 via-indigo-600 to-violet-600 text-xl font-black text-white shadow-lg shadow-indigo-500/25 transition duration-300 group-hover:-rotate-6 group-hover:scale-105">
               AI
             </span>
 
             <span className="hidden sm:block">
-              <span className="block text-[17px] font-extrabold tracking-tight text-slate-900">
+              <span className="block text-[22px] font-extrabold tracking-tight text-gray-400">
                 Interview<span className="text-indigo-600">AI</span>
               </span>
-              <span className="mt-0.5 block text-[10px] font-bold uppercase tracking-[0.18em] text-slate-400">
+              <span className="mt-0.5 block text-[12px] font-bold uppercase tracking-[0.18em] text-slate-400">
                 Career preparation
               </span>
             </span>
           </Link>
 
           {/* Desktop navigation */}
-          <div className="hidden items-center gap-1 rounded-2xl border border-slate-100 bg-slate-50/80 p-1.5 lg:flex">
+          <div className="hidden items-center gap-6 rounded-3xl border border-slate-80 p-2 lg:flex">
             {navigation.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
                 onClick={(event) => handleNavigation(event, item.href)}
-                className="group flex items-center gap-2 rounded-xl px-3.5 py-2.5 text-[13px] font-semibold text-slate-600 transition duration-200 hover:bg-white hover:text-indigo-700 hover:shadow-sm xl:px-4"
+                className="group flex items-center gap-3 rounded-xl px-3 py-2 text-[16px] font-semibold text-slate-400 transition duration-200 hover:bg-gray-800 hover:shadow-sm xl:px-4"
               >
-                <span className="text-base text-slate-400 transition group-hover:text-indigo-600">
+                <span className="text-base text-slate-400 transition">
                   {item.icon}
                 </span>
                 {item.label}
@@ -149,13 +149,13 @@ export default function Navbar({ user, onLogout }) {
           </div>
 
           {/* Right side */}
-          <div className="flex items-center gap-2 sm:gap-3">
+          <div className="flex items-center gap-4 sm:gap-5">
             <a
               href="#generator"
               onClick={(event) => handleNavigation(event, "#generator")}
-              className="hidden items-center gap-2 rounded-xl bg-indigo-600 px-4 py-3 text-sm font-bold text-white shadow-md shadow-indigo-600/20 transition duration-200 hover:-translate-y-0.5 hover:bg-indigo-700 hover:shadow-lg sm:inline-flex"
+              className="hidden items-center gap-1 rounded-xl bg-indigo-600 px-4 py-2 text-base font-semibold text-gray-200 shadow-md shadow-indigo-600/20 transition duration-200 hover:-translate-y-0.5 hover:bg-indigo-700 hover:shadow-lg sm:inline-flex"
             >
-              <span className="text-base">+</span>
+              <span className="text-2xl">+</span>
               New Report
             </a>
 
@@ -168,8 +168,8 @@ export default function Navbar({ user, onLogout }) {
                 aria-label="Open account menu"
                 className={`flex items-center gap-2 rounded-2xl border p-1.5 pr-2.5 transition ${
                   profileOpen
-                    ? "border-indigo-200 bg-indigo-50"
-                    : "border-slate-200 bg-white hover:border-indigo-200 hover:bg-slate-50"
+                    ? "border-indigo-200 bg-gray-800"
+                    : "border-slate-800 bg-gray-900 hover:border-indigo-200 hover:bg-gray-700"
                 }`}
               >
                 <span className="grid h-9 w-9 place-items-center rounded-xl bg-linear-to-br from-indigo-500 to-violet-600 text-xs font-extrabold text-white">
@@ -177,10 +177,10 @@ export default function Navbar({ user, onLogout }) {
                 </span>
 
                 <span className="hidden max-w-24 text-left md:block">
-                  <span className="block truncate text-xs font-bold text-slate-800">
+                  <span className="block truncate text-lg font-semibold text-slate-300">
                     {userName}
                   </span>
-                  <span className="mt-0.5 block text-[10px] text-slate-400">
+                  <span className="mt-0.5 block text-[12px] text-slate-300">
                     My account
                   </span>
                 </span>
@@ -188,7 +188,7 @@ export default function Navbar({ user, onLogout }) {
                 <svg
                   viewBox="0 0 20 20"
                   fill="none"
-                  className={`hidden h-4 w-4 text-slate-400 transition-transform md:block ${
+                  className={`hidden h-5 w-5 text-slate-400 transition-transform md:block ${
                     profileOpen ? "rotate-180" : ""
                   }`}
                   aria-hidden="true"
@@ -204,18 +204,18 @@ export default function Navbar({ user, onLogout }) {
               </button>
 
               {profileOpen && (
-                <div className="absolute right-0 top-full mt-3 w-72 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xl shadow-slate-900/10">
-                  <div className="bg-linear-to-br from-indigo-50 to-violet-50 p-4">
+                <div className="absolute right-0 top-full mt-3 w-96 h-76 overflow-hidden rounded-2xl border border-slate-400 bg-gray-800 shadow-2xl shadow-slate-900/10">
+                  <div className="bg-gray-800 p-4">
                     <div className="flex items-center gap-3">
                       <span className="grid h-12 w-12 place-items-center rounded-2xl bg-linear-to-br from-indigo-600 to-violet-600 text-sm font-extrabold text-white">
                         {initials || "U"}
                       </span>
 
                       <div className="min-w-0">
-                        <p className="truncate text-sm font-extrabold text-slate-900">
+                        <p className="truncate text-lg font-extrabold text-gray-50">
                           {userName}
                         </p>
-                        <p className="mt-1 truncate text-xs text-slate-500">
+                        <p className="mt-1 truncate text-lg text-gray-50">
                           {userEmail}
                         </p>
                       </div>
@@ -226,7 +226,7 @@ export default function Navbar({ user, onLogout }) {
                     <a
                       href="#reports"
                       onClick={(event) => handleNavigation(event, "#reports")}
-                      className="flex items-center gap-3 rounded-xl px-3 py-3 text-sm font-medium text-slate-600 transition hover:bg-indigo-50 hover:text-indigo-700"
+                      className="flex items-center gap-3 rounded-xl px-3 py-3 text-lg font-medium text-slate-400 transition hover:bg-gray-700 hover:text-indigo-700"
                     >
                       <span className="text-lg">▤</span>
                       My interview reports
@@ -235,7 +235,7 @@ export default function Navbar({ user, onLogout }) {
                     <a
                       href="#generator"
                       onClick={(event) => handleNavigation(event, "#generator")}
-                      className="flex items-center gap-3 rounded-xl px-3 py-3 text-sm font-medium text-slate-600 transition hover:bg-indigo-50 hover:text-indigo-700"
+                      className="flex items-center gap-3 rounded-xl px-3 py-3 text-lg font-medium text-slate-400 transition hover:bg-gray-700 hover:text-indigo-700"
                     >
                       <span className="text-lg">✦</span>
                       Generate new report
@@ -249,7 +249,7 @@ export default function Navbar({ user, onLogout }) {
                         setProfileOpen(false);
                         onLogout?.();
                       }}
-                      className="flex w-full items-center gap-3 rounded-xl px-3 py-3 text-left text-sm font-semibold text-red-600 transition hover:bg-red-50"
+                      className="flex w-full items-center gap-3 rounded-xl px-3 py-3 text-left text-lg font-semibold text-red-500 transition hover:bg-red-200"
                     >
                       <span className="text-lg">↪</span>
                       Sign out
