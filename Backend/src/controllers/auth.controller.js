@@ -6,8 +6,9 @@ const blacklistTokenModel = require("../models/blacklist.model");
 const cookieOptions = () => ({
   httpOnly: true,
   secure: process.env.NODE_ENV === "production",
-  sameSite: "lax",
+  sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
   maxAge: 3 * 24 * 60 * 60 * 1000,
+  path: "/",
 });
 const publicUser = (user) => ({
   id: user._id,
@@ -32,12 +33,10 @@ async function userRegister(req, res, next) {
       typeof password !== "string" ||
       password.length < 8
     ) {
-      return res
-        .status(400)
-        .json({
-          message:
-            "Username, valid email, and password (at least 8 characters) are required.",
-        });
+      return res.status(400).json({
+        message:
+          "Username, valid email, and password (at least 8 characters) are required.",
+      });
     }
     const exists = await userModel.findOne({ $or: [{ username }, { email }] });
     if (exists)
@@ -51,12 +50,10 @@ async function userRegister(req, res, next) {
       password: await bcrypt.hash(password, 12),
     });
     res.cookie("token", createToken(user), cookieOptions());
-    return res
-      .status(201)
-      .json({
-        message: "Account created successfully.",
-        user: publicUser(user),
-      });
+    return res.status(201).json({
+      message: "Account created successfully.",
+      user: publicUser(user),
+    });
   } catch (error) {
     return next(error);
   }
@@ -96,11 +93,7 @@ async function userLogout(req, res, next) {
         { $setOnInsert: { token } },
         { upsert: true },
       );
-    res.clearCookie("token", {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
-      sameSite: "lax",
-    });
+    clearCookie;
     return res.json({ message: "Logged out successfully." });
   } catch (error) {
     return next(error);
