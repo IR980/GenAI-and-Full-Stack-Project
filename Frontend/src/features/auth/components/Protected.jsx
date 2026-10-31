@@ -6,7 +6,7 @@ export default function Protected({ children }) {
   const location = useLocation();
   if (loading)
     return (
-      <main className="grid min-h-screen place-items-center bg-slate-50 text-sm text-slate-600">
+      <main className="grid min-h-screen place-items-center bg-slate-950 text-lg text-slate-400">
         Checking your session…
       </main>
     );

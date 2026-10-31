@@ -37,19 +37,19 @@ const Register = () => {
   };
 
   return (
-    <main className="flex min-h-screen items-center justify-center bg-linear-to-br from-indigo-100 via-white to-purple-100 px-4 py-10">
-      <div className="w-full max-w-md rounded-2xl border border-white/60 bg-white p-8 shadow-2xl sm:p-10">
+    <main className="flex min-h-screen items-center justify-center bg-gray-900 px-4 py-10">
+      <div className="w-full max-w-lg rounded-2xl border border-gray-500 bg-gray-800 p-8 shadow-2xl sm:p-10">
         {/* Header */}
         <div className="mb-8 text-center">
-          <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-indigo-600 text-2xl font-bold text-white shadow-lg shadow-indigo-200">
+          <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-indigo-600 text-2xl font-bold text-white shadow-lg">
             R
           </div>
 
-          <h1 className="text-3xl font-bold tracking-tight text-gray-900">
+          <h1 className="text-4xl font-bold tracking-tight text-gray-400">
             Create Account
           </h1>
 
-          <p className="mt-2 text-sm text-gray-500">
+          <p className="mt-2 text-md text-gray-500">
             Join us today! Enter your details below.
           </p>
         </div>
@@ -59,7 +59,7 @@ const Register = () => {
           {error && (
             <div
               role="alert"
-              className="rounded-xl bg-red-50 p-3 text-sm text-red-700"
+              className="rounded-xl bg-red-300 p-3 text-sm text-red-700"
             >
               {error}
             </div>
@@ -67,7 +67,7 @@ const Register = () => {
           <div>
             <label
               htmlFor="username"
-              className="mb-2 block text-sm font-semibold text-gray-700"
+              className="mb-2 block text-md font-semibold text-gray-400"
             >
               Username
             </label>
@@ -83,14 +83,14 @@ const Register = () => {
               autoComplete="username"
               minLength={3}
               required
-              className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-gray-900 outline-none transition placeholder:text-gray-400 focus:border-indigo-500 focus:bg-white focus:ring-4 focus:ring-indigo-100"
+              className="w-full rounded-xl border border-gray-500 bg-gray-900 px-4 py-3 text-gray-400 outline-none transition placeholder:text-gray-400 focus:border-indigo-500"
             />
           </div>
 
           <div>
             <label
               htmlFor="email"
-              className="mb-2 block text-sm font-semibold text-gray-700"
+              className="mb-2 block text-md font-semibold text-gray-400"
             >
               Email Address
             </label>
@@ -105,14 +105,14 @@ const Register = () => {
               placeholder="you@example.com"
               autoComplete="email"
               required
-              className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-gray-900 outline-none transition placeholder:text-gray-400 focus:border-indigo-500 focus:bg-white focus:ring-4 focus:ring-indigo-100"
+              className="w-full rounded-xl border border-gray-500 bg-gray-900 px-4 py-3 text-gray-400 outline-none transition placeholder:text-gray-400 focus:border-indigo-500"
             />
           </div>
 
           <div>
             <label
               htmlFor="password"
-              className="mb-2 block text-sm font-semibold text-gray-700"
+              className="mb-2 block text-md font-semibold text-gray-400"
             >
               Password
             </label>
@@ -129,20 +129,20 @@ const Register = () => {
                 autoComplete="new-password"
                 minLength={8}
                 required
-                className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 pr-20 text-gray-900 outline-none transition placeholder:text-gray-400 focus:border-indigo-500 focus:bg-white focus:ring-4 focus:ring-indigo-100"
+                className="w-full rounded-xl border border-gray-500 bg-gray-900 px-4 py-3 pr-20 text-gray-400 outline-none transition placeholder:text-gray-400 focus:border-indigo-500"
               />
 
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
-                className="absolute inset-y-0 right-3 text-sm font-semibold text-indigo-600 hover:text-indigo-800"
+                className="absolute inset-y-0 right-3 text-md font-semibold text-indigo-600 hover:text-indigo-800"
                 aria-label={showPassword ? "Hide password" : "Show password"}
               >
                 {showPassword ? "Hide" : "Show"}
               </button>
             </div>
 
-            <p className="mt-1.5 text-xs text-gray-500">
+            <p className="mt-1.5 text-sm text-gray-500">
               Use at least 8 characters.
             </p>
           </div>
@@ -150,7 +150,7 @@ const Register = () => {
           <div>
             <label
               htmlFor="confirmPassword"
-              className="mb-2 block text-sm font-semibold text-gray-700"
+              className="mb-2 block text-md font-semibold text-gray-400"
             >
               Confirm Password
             </label>
@@ -164,13 +164,13 @@ const Register = () => {
                 autoComplete="new-password"
                 minLength={8}
                 required
-                className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 pr-20 text-gray-900 outline-none transition placeholder:text-gray-400 focus:border-indigo-500 focus:bg-white focus:ring-4 focus:ring-indigo-100"
+                className="w-full rounded-xl border border-gray-500 bg-gray-900 px-4 py-3 pr-20 text-gray-400 outline-none transition placeholder:text-gray-400 focus:border-indigo-500"
               />
 
               <button
                 type="button"
                 onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                className="absolute inset-y-0 right-3 text-sm font-semibold text-indigo-600 hover:text-indigo-800 cursor-pointer"
+                className="absolute inset-y-0 right-3 text-md font-semibold text-indigo-600 hover:text-indigo-800 cursor-pointer"
                 aria-label={
                   showConfirmPassword ? "Hide password" : "Show password"
                 }
@@ -183,14 +183,14 @@ const Register = () => {
           <button
             type="submit"
             disabled={submitting}
-            className="cursor-pointer w-full rounded-xl bg-indigo-600 py-3.5 font-semibold text-white shadow-lg shadow-indigo-200 transition duration-200 hover:-translate-y-0.5 hover:bg-indigo-700 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-indigo-200 active:translate-y-0"
+            className="cursor-pointer w-full rounded-xl bg-indigo-600 py-3.5 font-semibold text-white shadow-lg transition duration-200 hover:-translate-y-0.5 hover:bg-indigo-700 hover:shadow-xl focus:outline-none active:translate-y-0"
           >
             {submitting ? "Creating account…" : "Create Account →"}
           </button>
         </form>
 
         {/* Footer */}
-        <p className="mt-8 text-center text-sm text-gray-500">
+        <p className="mt-8 text-center text-md text-gray-500">
           Already have an account?{" "}
           <Link
             to="/login"

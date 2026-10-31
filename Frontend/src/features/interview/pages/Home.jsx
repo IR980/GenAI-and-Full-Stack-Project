@@ -752,18 +752,18 @@ function Home() {
                 </p>
               </div>
             ) : reportsError ? (
-              <div className="rounded-2xl border border-amber-200 bg-amber-50 p-5 text-sm text-amber-800">
+              <div className="rounded-2xl border border-amber-200 bg-amber-500 p-5 text-sm text-amber-800">
                 {reportsError}
               </div>
             ) : reports.length === 0 ? (
-              <div className="rounded-3xl border border-dashed border-slate-300 bg-white px-6 py-12 text-center">
-                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-indigo-50 text-3xl">
+              <div className="rounded-3xl border border-dashed border-slate-500 bg-gray-900 px-6 py-12 text-center">
+                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-gray-700 text-3xl">
                   📑
                 </div>
 
-                <h3 className="mt-5 text-lg font-extrabold">No reports yet</h3>
+                <h3 className="mt-5 text-2xl text-gray-300 font-extrabold">No reports yet</h3>
 
-                <p className="mx-auto mt-2 max-w-md text-sm leading-6 text-slate-500">
+                <p className="mx-auto mt-2 max-w-md text-md leading-6 text-slate-500">
                   Your generated reports will appear here. Create your first
                   report to start preparing for your next interview.
                 </p>
@@ -771,7 +771,7 @@ function Home() {
                 <button
                   type="button"
                   onClick={scrollToGenerator}
-                  className="mt-6 rounded-xl bg-indigo-600 px-5 py-3 text-sm font-bold text-white transition hover:bg-indigo-700"
+                  className="mt-6 rounded-xl bg-indigo-600 px-5 py-3 text-md font-bold text-white transition hover:bg-indigo-700"
                 >
                   Create your first report
                 </button>
