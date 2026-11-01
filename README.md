@@ -46,3 +46,8 @@ Authentication uses an HTTP-only cookie. The frontend sends credentials with Axi
 - Never commit `.env` files or expose your Gemini API key.
 - PDF extraction works for text-based PDFs; scanned image PDFs require OCR, which is not included.
 - Gemini model can be changed with `GEMINI_MODEL` in the backend `.env`.
+
+## Production deployment
+- Deploy `Frontend` to Vercel and set its root directory to `Frontend`. The Vercel rewrites proxy `/api/*` requests to the Render backend so the browser uses same-origin authentication cookies.
+- Production frontend builds use relative `/api` URLs. `VITE_API_URL` is only used for local development; local `.env` can point it to `http://localhost:3000`.
+- Set the backend's `NODE_ENV` to `production` and configure `MONGO_URI`, `JWT_SECRET`, and `GOOGLE_GENAI_API_KEY` in the Render environment. Redeploy both services after changing configuration.
