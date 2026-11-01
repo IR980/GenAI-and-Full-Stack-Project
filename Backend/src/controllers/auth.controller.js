@@ -93,7 +93,7 @@ async function userLogout(req, res, next) {
         { $setOnInsert: { token } },
         { upsert: true },
       );
-    clearCookie;
+    res.clearCookie("token", cookieOptions());
     return res.json({ message: "Logged out successfully." });
   } catch (error) {
     return next(error);
